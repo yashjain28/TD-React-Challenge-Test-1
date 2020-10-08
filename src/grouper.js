@@ -1,8 +1,10 @@
-import React, { Component, Fragment } from 'react';
-import './App.css';
-import './grouper.js';
+// read the file
+// convert names into an array
+// shuffle the array
+// iterate through the shuffled array
+
 function shuffle(array) {
-  var m = array.length;
+  const m = array.length;
   var t, i;
 
   // While there remain elements to shuffle…
@@ -20,7 +22,9 @@ function shuffle(array) {
 }
 
 function createGroups(data) {
-  var arr = data.replace(/[\r\n]+/g, "\n").split("\n");
+  var arr = data
+    .replace(/[\r\n]+/g, "\n")
+    .split("\n");
 
   for (const i in arr) {
     console.log(arr[i]);
@@ -72,51 +76,4 @@ function createGroups(data) {
   return finalArr.join("");
 }
 
-class App extends Component {
-  
-  constructor() {
-    super();
-    this.state = {
-      text: `
-      output shown here
-      `
-    };
-    this.pug = 'enter names here';
-  }
-
-  
-
-  onChange(event) {
-    const transformedData = createGroups(event.target.value); 
-    this.pug = event.target.value
-    
-    this.setState({
-      [event.target.name]: transformedData,
-    });
-  }
-  
-  render() {
-    const  pugged  = this.pug;
-    const { text } = this.state;
-    return (
-      <Fragment>
-        <div className="work-area">
-          <div className="container">
-            <div className="row">
-              <div className="col-md-6">
-                <h2 className="editable">Input (editable field)</h2>
-                <textarea rows="30" cols="60" onChange={this.onChange.bind(this)} name="text" value={pugged} />
-              </div>
-              <div className="col-md-6">
-                <h2 className="non-editable">Output</h2>
-                <textarea rows="30" cols="60" readOnly value={text} />
-              </div>
-            </div>
-          </div>
-        </div>
-      </Fragment>
-    );
-  }
-}
-
-export default App;
+global.createGroups = createGroups;
