@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/TD-React-Challenge-Test-1/precache-manifest.103efbcfbc1861b925839aa69a7ef833.js"
+  "/TD-React-Challenge-Test-1/precache-manifest.78eb63a54408e204a9db0e0163aefd29.js"
 );
 
 workbox.clientsClaim();
