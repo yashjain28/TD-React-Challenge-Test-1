@@ -81,7 +81,7 @@ class App extends Component {
       output shown here
       `
     };
-    this.pug = 'enter names here';
+    this.pug = '';
   }
 
   
